@@ -1,0 +1,464 @@
+/* --Author Info--
+  Creator: ViewPoint
+  Version: 1.0
+  File Name: style.css
+--Author Info--*/
+
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* FONTS */
+
+
+/* Common CSS */
+
+:root {
+  --bg-color: #222222;
+  --primary-color: #f64317;
+  --white: #ffffff;
+  --black: #181818;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.btn {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+img,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-heading {
+  margin-bottom: 60px;
+}
+
+.section-heading .main-heading {
+  font-size: 70px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.section-heading .sub-heading {
+  font-size: 40px;
+  color: var(--primary-color);
+  font-weight: 300;
+  font-family: 'Rubik', sans-serif;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+
+/* Common CSS */
+
+
+/* Preloader CSS */
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.spin {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 150px;
+  border: 3px solid transparent;
+  margin: -75px 0 0 -75px;
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: spin 3s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+  z-index: 999999;
+}
+
+.spin:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border: 3px solid transparent;
+  border-top-color: blue;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+}
+
+.spin:after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  border: 3px solid transparent;
+  border-top-color: red;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: spin 1.5ss linear infinite;
+  -webkit-animation: spin 1.5ss linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+.loader-section {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--black);
+}
+
+.section-left {
+  left: 0;
+}
+
+.section-right {
+  right: 0;
+}
+
+.loaded .loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -ms-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -o-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+}
+
+.loaded .loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -ms-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+  -o-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.00);
+}
+
+.loaded .spin {
+  opacity: 0;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+}
+
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transition: all 0.3s 1s ease-out;
+  -webkit-transition: all 0.3s 1s ease-out;
+  -moz-transition: all 0.3s 1s ease-out;
+  -ms-transition: all 0.3s 1s ease-out;
+  -o-transition: all 0.3s 1s ease-out;
+}
+
+
+/* Preloader CSS */
+
+
+/* Menu CSS */
+
+.header-area {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-area .main-menu {
+  padding: 25px 0;
+  width: 100%;
+  z-index: 4;
+  background-color: var(--bg-color);
+}
+
+.main-menu .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-menu .nav-inner .menu-items ul {
+  display: flex;
+}
+
+.main-menu .nav-inner .menu-items .menu-link {
+  margin-left: 40px;
+}
+
+.main-menu .nav-inner .menu-items .menu-link a {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+  -moz-transition: all linear 0.3s;
+  -ms-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+}
+
+.main-menu .nav-inner .menu-items .menu-link a:hover {
+  color: var(--primary-color);
+}
+
+.main-menu .nav-inner .menu-items .menu-link a.hire-btn {
+  padding: 15px 30px;
+  background: var(--primary-color);
+  border-radius: 3px;
+  border: 1px solid var(--primary-color);
+}
+
+.main-menu .nav-inner .menu-items .menu-link a.hire-btn:hover {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+}
+
+.navfixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--black) !important;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+  transition: all linear 0.5s;
+}
+
+.navfixed .logo {
+  width: 80px;
+}
+
+.navfixed.main-menu .nav-inner .menu-items .menu-link a {
+  color: var(--white);
+}
+
+.navfixed.main-menu .nav-inner .menu-items .menu-link a:hover {
+  color: var(--primary-color);
+}
+
+.navfixed .line {
+  stroke: var(--white);
+}
+
+.ham {
+  width: 80px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--white);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  cursor: pointer;
+}
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+.toggle_menu {
+  display: none;
+}
+
+
+/* Menu CSS */
+
+
+/* Hero CSS */
+
+.banner-area {
+  background: url(../images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+  width: 100%;
+}
+
+.banner-area .banner-text {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  padding-top: 100px;
+}
+
+.banner-area .banner-text h2 {
+  padding-bottom: 20px;
+  font-size: 55px;
+}
+
+.banner-area .banner-text h2:last-child {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 70px;
+}
+
+
+/* Hero CSS */
+
+
+/* Services CSS */
+
+.services {
+  background-color: #101010;
+}
+
+.services .services-inner .services-card {
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: var(--primary-color);
+}
+
+.services .services-card .ser-card-img {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.services .services-card .ser-card-img:before {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: var(--white);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+
+/* Services CSS */
